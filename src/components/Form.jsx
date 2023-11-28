@@ -14,6 +14,10 @@ export default function Form() {
   const dispatch = useDispatch();
 
   const handleAddTodo = (e) => {
+    if (title === "" || content === "") {
+      alert("제목 또는 내용을 입력해주세요.");
+      return false;
+    }
     e.preventDefault();
     const newTodo = {
       id: shortid.generate(),
@@ -52,5 +56,7 @@ const StForm = styled.form`
     width: 50px;
     border: none;
     border-radius: 10px;
+
+    cursor: pointer;
   }
 `;

@@ -19,9 +19,10 @@ export default function Todo({ isActive }) {
   const clickDetailpage = (id) => {
     return navigate(`/${id}`);
   };
+
   return (
     <StDiv>
-      <h2>{isActive ? "해야할 일" : "완료한 일"}</h2>
+      <h2>{isActive ? "해야할 일🔥" : "완료한 일😀"}</h2>
       <div>
         {todos
           .filter((i) => {
@@ -29,7 +30,7 @@ export default function Todo({ isActive }) {
           })
           .map((i) => {
             return (
-              <div>
+              <div key={i.id}>
                 <h3>{i.title}</h3>
                 <p>{i.body}</p>
                 <button onClick={() => handleDeleteTodo(i.id)}>삭제</button>
@@ -80,5 +81,7 @@ const StDiv = styled.div`
     padding: 5px;
     border: none;
     border-radius: 10px;
+
+    cursor: pointer;
   }
 `;
