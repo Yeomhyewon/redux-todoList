@@ -10,7 +10,12 @@ export default function Todo({ isActive }) {
   const navigate = useNavigate();
 
   const handleDeleteTodo = (id) => {
-    return dispatch(deleteTodo(id));
+    if (!window.confirm("정말 삭제하시겠습니까?")) {
+      return false;
+    } else {
+      alert("삭제되었습니다.");
+      dispatch(deleteTodo(id));
+    }
   };
   const handleSwitchTodo = (id) => {
     return dispatch(switchTodo(id));
