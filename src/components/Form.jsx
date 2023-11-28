@@ -26,6 +26,7 @@ export default function Form() {
       isDone: false,
     };
     dispatch(addTodo(newTodo));
+    alert("등록되었습니다😀");
     setContent("");
     setTitle("");
   };
