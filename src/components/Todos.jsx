@@ -67,11 +67,11 @@ const StDiv = styled.div`
 
   & > div > div > h3 {
     text-align: center;
-
-    & > p {
-      text-align: justify;
-    }
   }
+  & > div > div > p {
+    text-align: center;
+  }
+
   & > div > div > button {
     margin-left: 5px;
     padding: 5px;
