@@ -30,7 +30,10 @@ export default function Todo({ isActive }) {
           })
           .map((i) => {
             return (
-              <div key={i.id}>
+              <StTodoListContainer
+                $bdcolor={!i.isDone ? "#FCBAD3" : "#AA96DA"}
+                key={i.id}
+              >
                 <h3>{i.title}</h3>
                 <p>{i.body}</p>
                 <button onClick={() => handleDeleteTodo(i.id)}>삭제</button>
@@ -44,7 +47,7 @@ export default function Todo({ isActive }) {
                 >
                   상세보기
                 </button>
-              </div>
+              </StTodoListContainer>
             );
           })}
       </div>
@@ -62,13 +65,6 @@ const StDiv = styled.div`
     gap: 10px;
   }
 
-  & > div > div {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 3px solid pink;
-    border-radius: 10px;
-  }
-
   & > div > div > h3 {
     text-align: center;
 
@@ -84,4 +80,11 @@ const StDiv = styled.div`
 
     cursor: pointer;
   }
+`;
+
+const StTodoListContainer = styled.div`
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 3px solid ${(props) => props.$bdcolor};
+  border-radius: 10px;
 `;

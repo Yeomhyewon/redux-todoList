@@ -22,8 +22,13 @@ const Detail = () => {
   if (!todo) return;
   return (
     <>
-      <StBtn onClick={clickHome}>뒤로가기</StBtn>
-      <StDiv>
+      <StBtn
+        $bdcolor={!todo.isDone ? "#FCBAD3" : "#AA96DA"}
+        onClick={clickHome}
+      >
+        뒤로가기
+      </StBtn>
+      <StDiv $bdcolor={!todo.isDone ? "#FCBAD3" : "#AA96DA"}>
         <div>
           <h2>제목: {todo?.title}</h2>
           <p>내용: {todo?.body}</p>
@@ -48,7 +53,7 @@ const StDiv = styled.div`
 
   & > div {
     width: 200px;
-    border: 3px solid pink;
+    border: 3px solid ${(props) => props.$bdcolor};
     border-radius: 10px;
     padding: 20px;
 
@@ -57,13 +62,13 @@ const StDiv = styled.div`
       width: 60px;
       border: none;
       border-radius: 10px;
-      background-color: pink;
+      background-color: ${(props) => props.$bdcolor};
 
       cursor: pointer;
       transition: all 0.5s;
 
       &:hover {
-        background-color: #fd8d9f;
+        background-color: #ffffd2;
       }
     }
   }
@@ -74,13 +79,13 @@ const StBtn = styled.button`
   padding: 10px;
   border: none;
   border-radius: 10px;
-  background-color: pink;
+  background-color: ${(props) => props.$bdcolor};
 
   cursor: pointer;
   transition: all 0.5s;
 
   &:hover {
-    background-color: #fd8d9f;
+    background-color: #ffffd2;
   }
 `;
 export default Detail;

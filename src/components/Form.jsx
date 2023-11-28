@@ -41,22 +41,29 @@ export default function Form() {
 const StForm = styled.form`
   display: flex;
   justify-content: center;
-  background-color: pink;
+  background-color: #a8d8ea;
   padding: 20px;
 
   & > input {
     padding: 5px;
-    margin: 0px 5px 0px 5px;
+    margin: 0px 20px 0px 5px;
     border: none;
     border-radius: 10px;
   }
 
   & > button {
     padding: 5px;
+    margin-left: 10px;
     width: 50px;
     border: none;
     border-radius: 10px;
+    background-color: #ffffd2;
 
     cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: #fcbad3;
+    }
   }
 `;
